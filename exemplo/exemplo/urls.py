@@ -20,5 +20,6 @@ from catalog import views
 
 urlpatterns = [
     path('', views.home, name='home'),
+    path('user/', views.users, name='list_user'),
     path('admin/', admin.site.urls),
 ]

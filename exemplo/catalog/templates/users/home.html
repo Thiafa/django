@@ -18,7 +18,8 @@
       </div>
     </nav>
 
-    <form method="" action="post" class="container">
+    <form method="post" action="{% url 'list_user' %}" class="container">
+      {% csrf_token %}
       <h1 class="">Cadastrar usuários</h1>
       <div class="col-sm-6">
         <label for="name" class="form-label">Nome</label>
@@ -33,11 +34,13 @@
       <div class="col-sm-6 mt-2">
         <label for="idade" class="form-label">Idade</label>
         <input
-          type="text"
+          type="number"
+          min="0"
+          max="100"
           class="form-control"
           id="idade"
           placeholder="Idade"
-          name="idade"
+          name="age"
         />
       </div>
       <div class="col-sm-6 mt-2">
